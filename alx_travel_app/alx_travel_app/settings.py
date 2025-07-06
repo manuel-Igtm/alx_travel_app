@@ -28,6 +28,7 @@ import environ
 
 env = environ.Env()
 environ.Env.read_env()
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 SECRET_KEY = env('SECRET_KEY')
 DEBUG = env.bool('DEBUG', default=False)
@@ -85,13 +86,13 @@ WSGI_APPLICATION = 'alx_travel_app.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-     'default': {
+    'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': env('DB_NAME'),
-        'USER': env('DB_USER'),
-        'PASSWORD': env('DB_PASSWORD'),
-        'HOST': env('DB_HOST'),
-        'PORT': env('DB_PORT'),
+        'NAME': 'alxtravelapp',
+        'USER': 'root',  # Replace with your actual DB user
+        'PASSWORD': 'Immamanu1234!',  # Replace with your actual password
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
